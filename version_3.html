@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta NAME="Generator" CONTENT="EditPlus">
+    <meta NAME="Author" CONTENT="">
+    <meta NAME="Keywords" CONTENT="">
+    <meta NAME="Description" CONTENT="">
+    <title>Heart For Uyên</title>
+    <link rel="icon" type="image/png" href="/image/2048px-Heart_corazón.svg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+  --bg-color: #ffcccc;
+  --fur: #33292b;
+  --inner-ear: #d36149;
+  --eye: #ddb54d;
+  --eyeball: #030303;
+  --eyelight: #fafafa;
+  --nose: #d3918e;
+  --heart: #dc4053;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+}
+
+.container_cat {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cat {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.face {
+  background-color: var(--fur);
+  width: 200px;
+  height: 164px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.ear-left,
+.ear-right {
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid var(--fur);
+  border-left: 42px solid transparent;
+  border-right: 42px solid transparent;
+  position: relative;
+}
+
+.ear-left {
+  bottom: 30px;
+  transform: rotate(-35deg);
+  animation-name: an-ears;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes an-ears {
+  from {
+    top: -15px;
+  }
+  to {
+    top: -30px;
+  }
+}
+
+@keyframes ear-dance-right {
+  from {
+    top: -75px;
+  }
+  to {
+    top: -88px;
+  }
+}
+
+.ear-right {
+  bottom: 90px;
+  left: 125px;
+  transform: rotate(35deg);
+  animation-name: ear-dance-right;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.inner-l {
+  width: 0;
+  height: 0;
+  right: 27px;
+  border-bottom: 45px solid var(--inner-ear);
+  border-left: 27px solid transparent;
+  position: relative;
+}
+
+.inner-r {
+  width: 0;
+  height: 0;
+  border-bottom: 45px solid var(--inner-ear);
+  border-right: 27px solid transparent;
+  position: relative;
+}
+
+.eye-left,
+.eye-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--eye);
+  position: relative;
+}
+
+.eye-left {
+  bottom: 65px;
+  left: 45px;
+}
+
+.eye-right {
+  bottom: 105px;
+  left: 125px;
+}
+
+.eye-ball {
+  width: 30px;
+  height: 30px;
+  background-color: var(--eyeball);
+  position: relative;
+  border-radius: 50%;
+  top: 4px;
+  left: 5px;
+}
+
+.eye-light {
+  width: 5px;
+  height: 5px;
+  background-color: var(--eyelight);
+  position: relative;
+  border-radius: 50%;
+  top: 8px;
+  left: 12px;
+}
+
+.shadow-light {
+  width: 7px;
+  height: 7px;
+  background-color: #fefefe;
+  position: relative;
+  border-radius: 50%;
+  top: -2px;
+  left: 20px;
+}
+
+.nose {
+  width: 20px;
+  height: 18px;
+  background-color: var(--nose);
+  border-radius: 49% 51% 50% 50% / 10% 10% 90% 90%;
+  position: relative;
+  bottom: 103px;
+  left: 96px;
+}
+
+.l1,
+.l2 {
+  background-color: var(--nose);
+  height: 16px;
+  width: 1px;
+  position: relative;
+}
+
+.l1 {
+  transform: rotate(45deg);
+  left: 4px;
+  top: 14px;
+}
+
+.l2 {
+  transform: rotate(-45deg);
+  left: 14px;
+  top: -2px;
+}
+
+.cat-body {
+  background-color: var(--fur);
+  width: 210px;
+  height: 200px;
+  position: relative;
+  top: 146px;
+  left: 40px;
+  border-radius: 25% 80% 100% 0% / 25% 100% 0% 100%;
+}
+
+.paw1,
+.paw2 {
+  background-color: var(--fur);
+  height: 22px;
+  width: 33px;
+  position: relative;
+  top: 198px;
+  border-radius: 0% 100% 49% 51% / 0% 0% 100% 100%;
+}
+
+.paw2 {
+  top: 177px;
+  left: 60px;
+}
+
+.tail {
+  background-color: var(--fur);
+  width: 168px;
+  height: 25px;
+  position: relative;
+  top: 96px;
+  left: 197px;
+  border-radius: 0 20px 20px 0;
+  transform: rotate(-25deg);
+}
+
+.heart {
+  background-color: var(--heart);
+  height: 100px;
+  width: 100px;
+  bottom: 250px;
+  left: 250px;
+  position: absolute;
+  transform: rotate(45deg);
+  animation: beat 2s infinite;
+}
+
+.heart-l,
+.heart-r {
+  background-color: var(--heart);
+  height: 70px;
+  width: 100px;
+  position: relative;
+  border-radius: 150px 150px 0 0;
+}
+
+.heart-l {
+  bottom: 45px;
+  position: relative;
+}
+
+.heart-r {
+  bottom: 55px;
+  right: 60px;
+  transform: rotate(-90deg);
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(0.75) rotate(55deg);
+    opacity: 1;
+  }
+  
+  5%,
+  15%,
+  25% {
+    transform: scale(1) rotate(55deg);
+  }
+  
+  10%,
+  20% {
+    transform: scale(0.75) rotate(55deg);
+  }
+  
+  70% {
+    opacity: 1;
+  }
+  
+  100% {
+    transform: rotate(55deg) translateY(-10px) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+    </style>
+</head>
+<body >
+    <header>
+        <div class="menu">
+            <button class="btn btn-collapse mb-2" type="button"
+            data-bs-toggle="collapse" data-bs-target="#collapse-menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                class="bi bi-list" viewBox="0 0 16 16" fill="white">
+                <path fill-rule="evenodd" stroke="white"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+            </button> 
+            <div class="collapse" id="collapse-menu">
+               <ul>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="index.html">Version 1</a>
+                </li >
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_2.html">Version 2</a>
+                </li>
+                <li class="active">
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_3.html">Version 3</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_4.html">Version 4</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_5.html">Version 5</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_6.html">Version 6</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_7.html">Version 7</a>
+                </li>
+                <li>
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_8.html">Version 8</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="final.html">Final</a>
+                </li>
+               </ul>
+              </div>
+        </div>
+    </header>
+    <div class="container_cat">
+        <div class="cat">
+          <div class="face">
+            <div class="ear-left">
+              <div class="inner-l"></div>
+            </div>
+            <div class="ear-right">
+              <div class="inner-r"></div>
+            </div>
+            <div class="eye-left">
+              <div class="eye-ball">
+                <div class="eye-light"></div>
+                <div class="shadow-light"></div>
+              </div>
+            </div>
+            <div class="eye-right">
+              <div class="eye-ball">
+                <div class="eye-light"></div>
+                <div class="shadow-light"></div>
+              </div>
+            </div>
+            <div class="nose">
+              <div class="l1"></div>
+              <div class="l2"></div>
+            </div>
+          </div>
+          <div class="cat-body">
+            <div class="paw1"></div>
+            <div class="paw2"></div>
+            <div class="tail"></div>
+          </div>
+        </div>
+        <div class="heart">
+          <div class="heart-l"></div>
+          <div class="heart-r"></div>
+        </div>
+      </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</html>

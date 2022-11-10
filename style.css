@@ -1,0 +1,74 @@
+/* Menu */
+.menu{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 999;
+    background-color: transparent;
+}
+.bg{
+    background-color: #ffffff50;
+}
+.btn-collapse{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    opacity: 50%;
+}
+.btn-collapse img{
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+.btn:focus{
+    box-shadow: none;
+
+}
+#collapse-menu{
+    margin: 0 12px;
+    background-color: transparent;
+
+}
+#collapse-menu ul {
+    padding: 0;
+    margin: 0;
+}
+#collapse-menu li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+#collapse-menu li img{
+    display: none;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    margin-right: 5px;
+}
+#collapse-menu li a{
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    opacity: 50%;
+}
+#collapse-menu li.active img , #collapse-menu li:hover img{
+    display: block;
+}
+#collapse-menu li.active a , #collapse-menu li:hover a{
+    color: red;
+    opacity: 100%;
+}
+
+
+
+/* Version 1 */
+
+/* Version 2 */
+
+/* Version_3 */

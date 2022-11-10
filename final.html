@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta NAME="Generator" CONTENT="EditPlus">
+    <meta NAME="Author" CONTENT="">
+    <meta NAME="Keywords" CONTENT="">
+    <meta NAME="Description" CONTENT="">
+    <title>Heart For Uyên</title>
+    <link rel="icon" type="image/png" href="/image/2048px-Heart_corazón.svg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300">
+    <link rel="stylesheet" href="style.css">
+   <style>
+    body {
+  overflow: hidden;
+  background-color: #f1f1f1; }
+
+.wrapper {
+  height: 80vh;
+  width: calc(100vw - 20px);
+  margin: 10vh 10px 0;
+  font-family: 'Roboto Slab', serif; }
+
+.title {
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 1.2;
+  margin: 0.25em auto;
+  text-align: center;
+  width: 90%; }
+
+.subtitle {
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin: 0.25em auto 2em;
+  text-align: center;
+  width: 90%; }
+  .subtitle small {
+    font-size: 50%;
+    color: #bbb; }
+
+.heart {
+  position: relative; }
+  .heart__left path, .heart__right path {
+    fill: #BE1E2D; }
+  .heart__left {
+    width: 248.5px;
+    position: absolute;
+    left: 0; }
+    @media screen and (max-width: 515px) {
+      .heart__left {
+        width: 50.2%; } }
+  .heart__right {
+    width: 287px;
+    position: absolute;
+    right: 0; }
+    @media screen and (max-width: 515px) {
+      .heart__right {
+        width: 58%; } }
+
+.smiley {
+  width: 90vw;
+  left: 5vw;
+  height: 430px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  position: absolute; }
+  .smiley__face {
+    background-color: #ffc40f;
+    background: radial-gradient(#ffc40f 45%, #F5AB35 85%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative; }
+  .smiley__speech {
+    font-weight: 300;
+    text-align: center; }
+
+.smiley__eye--left, .smiley__eye--right {
+  height: 10px;
+  width: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  transition: all 0.15s ease-out; }
+  .smiley__eye--left {
+    left: 30px; }
+    @media screen and (min-width: 1101px) and (max-width: 1200px) {
+      .smiley__eye--left {
+        top: 30px;
+        left: 20px; } }
+    @media screen and (min-width: 1201px) and (max-width: 1300px) {
+      .smiley__eye--left {
+        top: 35px;
+        left: 50px; } }
+    @media screen and (min-width: 1340px) and (max-width: 1350px) {
+      .smiley__eye--left {
+        height: 3px;
+        width: 12px; } }
+    @media screen and (min-width: 1390px) and (max-width: 1400px) {
+      .smiley__eye--left {
+        height: 3px;
+        width: 12px; } }
+    @media screen and (min-width: 1451px) and (max-width: 1650px) {
+      .smiley__eye--left {
+        height: 13px;
+        width: 13px; } }
+    @media screen and (min-width: 1651px) {
+      .smiley__eye--left {
+        height: 3px;
+        width: 15px;
+        transform: rotate(10deg); } }
+  .smiley__eye--right {
+    right: 30px; }
+    @media screen and (min-width: 1101px) and (max-width: 1200px) {
+      .smiley__eye--right {
+        top: 35px;
+        right: 50px; } }
+    @media screen and (min-width: 1201px) and (max-width: 1300px) {
+      .smiley__eye--right {
+        top: 30px;
+        right: 20px; } }
+    @media screen and (min-width: 1340px) and (max-width: 1350px) {
+      .smiley__eye--right {
+        height: 3px;
+        width: 12px; } }
+    @media screen and (min-width: 1390px) and (max-width: 1400px) {
+      .smiley__eye--right {
+        height: 3px;
+        width: 12px; } }
+    @media screen and (min-width: 1451px) and (max-width: 1650px) {
+      .smiley__eye--right {
+        height: 13px;
+        width: 13px; } }
+    @media screen and (min-width: 1651px) {
+      .smiley__eye--right {
+        height: 3px;
+        width: 15px;
+        transform: rotate(-10deg); } }
+
+.smiley__mouth {
+  width: 40px;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  border-bottom: 3px solid black;
+  border-radius: 0 0 50% 50%; }
+  @media screen and (min-width: 850px) {
+    .smiley__mouth {
+      transition: all 0.15s ease-out;
+      border-radius: 50%; } }
+  @media screen and (max-width: 800px) {
+    .smiley__mouth {
+      height: 15px;
+      background-color: #000;
+      bottom: 20px;
+      width: 30px;
+      left: 35px; }
+      .smiley__mouth:before {
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        border-right: 10px solid black;
+        border-bottom: 12px solid transparent;
+        top: 0;
+        left: -9px; }
+      .smiley__mouth:after {
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        border-left: 10px solid black;
+        border-bottom: 12px solid transparent;
+        top: 0;
+        right: -9px; } }
+  @media screen and (min-width: 801px) and (max-width: 1000px) {
+    .smiley__mouth {
+      height: 15px; } }
+  @media screen and (min-width: 1100px) and (max-width: 1200px) {
+    .smiley__mouth {
+      left: 20px;
+      transform: rotate(10deg);
+      width: 30px; } }
+  @media screen and (min-width: 1201px) and (max-width: 1300px) {
+    .smiley__mouth {
+      left: 50px;
+      transform: rotate(-10deg);
+      width: 30px; } }
+  @media screen and (min-width: 1401px) {
+    .smiley__mouth {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      left: 40px;
+      bottom: 20px;
+      background-color: #000; } }
+  @media screen and (min-width: 2001px) {
+    .smiley__mouth {
+      width: 30px;
+      height: 25px;
+      left: 35px; } }
+      @media only screen and (max-width: 600px) {
+        .menu{
+        top: 0px;
+        left: 0px;
+    }
+}
+.tear {
+  height: 8px;
+  width: 8px;
+  background-color: rgba(25, 181, 254, 0.75);
+  position: absolute;
+  top: 45px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 100; }
+  .tear:before {
+    content: '';
+    height: 0;
+    width: 0;
+    border-bottom: 10px solid rgba(25, 181, 254, 0.75);
+    border-left: 4px solid transparent;
+    position: absolute;
+    top: -6px;
+    left: 0px; }
+  .tear:after {
+    content: '';
+    height: 0;
+    width: 0;
+    border-bottom: 10px solid rgba(25, 181, 254, 0.75);
+    border-right: 4px solid transparent;
+    position: absolute;
+    top: -6px;
+    right: 0px; }
+  @media screen and (min-width: 1700px) {
+    .tear1 {
+      left: 35px;
+      animation: cry 1s 0.4s infinite; } }
+  @media screen and (min-width: 1700px) {
+    .tear2 {
+      left: 33px;
+      animation: cry 2s 0.4s infinite; } }
+  @media screen and (min-width: 1700px) {
+    .tear3 {
+      left: 29px;
+      animation: cry 2s 0.3s infinite; } }
+  @media screen and (min-width: 1700px) {
+    .tear4 {
+      left: 60px;
+      animation: cry 2s 0.1s infinite; } }
+  @media screen and (min-width: 1700px) {
+    .tear5 {
+      left: 58px;
+      animation: cry 3s 0.5s infinite; } }
+  @media screen and (min-width: 1700px) {
+    .tear6 {
+      left: 58px;
+      animation: cry 1.5s 0.2s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear7 {
+      left: 21px;
+      animation: cryharder 1s 0.3s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear8 {
+      left: 25px;
+      animation: cryharder 0.5s 0.4s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear9 {
+      left: 34px;
+      animation: cryharder 1s 0.5s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear10 {
+      left: 24px;
+      animation: cryharder 0.5s 0.1s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear11 {
+      left: 31px;
+      animation: cryharder 1s 0.5s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear12 {
+      left: 29px;
+      animation: cryharder 1.5s 0.2s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear13 {
+      left: 24px;
+      animation: cryharder 0.5s 0.5s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear14 {
+      left: 60px;
+      animation: cryharder 1s 0.5s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear15 {
+      left: 64px;
+      animation: cryharder 1s 0.4s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear16 {
+      left: 63px;
+      animation: cryharder 1.5s 0.3s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear17 {
+      left: 64px;
+      animation: cryharder 1.5s 0.4s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear18 {
+      left: 63px;
+      animation: cryharder 1.5s 0.4s infinite; } }
+  @media screen and (min-width: 1801px) {
+    .tear19 {
+      left: 65px;
+      animation: cryharder 1s 0.2s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear21 {
+      left: 30px;
+      animation: cryhardest 1s 0.5s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear22 {
+      left: 33px;
+      animation: cryhardest 2s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear23 {
+      left: 32px;
+      animation: cryhardest 1.5s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear24 {
+      left: 28px;
+      animation: cryhardest 2s 0.4s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear25 {
+      left: 32px;
+      animation: cryhardest 1s 0.5s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear26 {
+      left: 31px;
+      animation: cryhardest 1.5s 0.2s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear27 {
+      left: 31px;
+      animation: cryhardest 0.5s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear28 {
+      left: 28px;
+      animation: cryhardest 1s 0.2s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear29 {
+      left: 28px;
+      animation: cryhardest 2s 0.2s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear30 {
+      left: 23px;
+      animation: cryhardest 1s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear31 {
+      left: 27px;
+      animation: cryhardest 1s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear32 {
+      left: 27px;
+      animation: cryhardest 1.5s 0.5s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear33 {
+      left: 30px;
+      animation: cryhardest 1s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear34 {
+      left: 22px;
+      animation: cryhardest 2s 0.4s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear35 {
+      left: 29px;
+      animation: cryhardest 0.5s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear36 {
+      left: 59px;
+      animation: cryhardest 0.5s 0.2s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear37 {
+      left: 59px;
+      animation: cryhardest 1.5s 0.4s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear38 {
+      left: 65px;
+      animation: cryhardest 1.5s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear39 {
+      left: 67px;
+      animation: cryhardest 1.5s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear40 {
+      left: 60px;
+      animation: cryhardest 2s 0.4s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear41 {
+      left: 63px;
+      animation: cryhardest 2s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear42 {
+      left: 64px;
+      animation: cryhardest 1.5s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear43 {
+      left: 56px;
+      animation: cryhardest 1.5s 0.5s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear44 {
+      left: 56px;
+      animation: cryhardest 1s 0.4s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear45 {
+      left: 69px;
+      animation: cryhardest 1s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear46 {
+      left: 59px;
+      animation: cryhardest 1.5s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear47 {
+      left: 58px;
+      animation: cryhardest 1s 0.3s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear48 {
+      left: 57px;
+      animation: cryhardest 2s 0.2s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear49 {
+      left: 60px;
+      animation: cryhardest 1s 0.1s infinite; } }
+  @media screen and (min-width: 2001px) {
+    .tear50 {
+      left: 68px;
+      animation: cryhardest 2s 0.3s infinite; } }
+
+@keyframes cry {
+  0% {
+    opacity: 0; }
+  10% {
+    transform: translateY(0);
+    opacity: 1; }
+  100% {
+    transform: translateY(60px);
+    opacity: 0; } }
+@keyframes cryharder {
+  0% {
+    opacity: 0; }
+  10% {
+    transform: translateY(0);
+    opacity: 1; }
+  100% {
+    transform: translateY(150px);
+    opacity: 0; } }
+@keyframes cryhardest {
+  0% {
+    opacity: 0; }
+  10% {
+    transform: translateY(0);
+    opacity: 1; }
+  100% {
+    transform: translateY(400px);
+    opacity: 0; } }
+
+/*# sourceMappingURL=main.css.map */
+
+   </style>
+</head>
+<body >
+    <header>
+        <div class="menu">
+            <button class="btn btn-collapse mb-2" type="button"
+            data-bs-toggle="collapse" data-bs-target="#collapse-menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                class="bi bi-list" viewBox="0 0 16 16" fill="white">
+                <path fill-rule="evenodd" stroke="white"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+            </button> 
+            <div class="collapse" id="collapse-menu">
+               <ul>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="index.html">Version 1</a>
+                </li >
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_2.html">Version 2</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_3.html">Version 3</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_4.html">Version 4</a>
+                </li>
+                <li >
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_5.html">Version 5</a>
+                </li>
+                <li>
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="version_6.html">Version 6</a>
+                </li>
+                <li >
+                  <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                  <a href="version_7.html">Version 7</a>
+              </li>
+              <li>
+                <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                <a href="version_8.html">Version 8</a>
+            </li>
+                <li class="active">
+                    <img src="image/2048px-Heart_corazón.svg.png" alt="heart">
+                    <a href="final.html">Final</a>
+                </li>
+               </ul>
+              </div>
+        </div>
+    </header>
+    <div class="wrapper">
+  
+      <header>
+        <h1 class="title">Fix hộ trái tim anh với!!!</h1>
+        <h2 class="subtitle " style="margin-bottom: 0;">Nhấn F12 & nhấn <br><img src="image/Screenshot_1.png" alt="screen" style="width: 300px ; height: 30px; object-fit: contain; margin: 10px 0;"><br>Sau đó kéo từ từ để fix giúp anh<3</h2>
+          <h2 class="subtitle " style="margin: 20px auto 0;"><small style="font-size: 70%;">Chỉ trên DESKTOP và chỉ ok khi màn hình không dưới 500px.</small></h2>
+      </header>
+    
+      <div class="heart">
+    
+        <svg version="1.1" class="heart__left" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 248.5 430" enable-background="new 0 0 248.5 430" xml:space="preserve">
+          <path d="M248.5,60.5c0,0-37-60.5-130.5-60.5S0,79.5,0,126s31,124,248.5,304L227,366.7l21.5-47.7L209,245.3l39.5-56.8
+          L219,128.7L248.5,60.5z"/>
+        </svg>
+    
+    
+        <svg class="heart__right" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="209 0 287 430" enable-background="new 209 0 287 430" xml:space="preserve">
+          <path d="M247.5,60.5c0,0,37-60.5,130.5-60.5s118,79.5,118,126s-31,124-248.5,304L227,366.7l20.5-47.7L209,245.3
+            l38.5-56.8L219,128.7L247.5,60.5z"/>
+         </svg>
+    
+      </div>
+    
+      <div class="smiley">
+        <div class="smiley__face">
+          <div class="smiley__eye--left"></div>
+          <div class="smiley__eye--right"></div>
+          <div class="smiley__tears">
+            <div class="tear tear1"></div>
+            <div class="tear tear2"></div>
+            <div class="tear tear3"></div>
+            <div class="tear tear4"></div>
+            <div class="tear tear5"></div>
+            <div class="tear tear6"></div>
+            <div class="tear tear7"></div>
+            <div class="tear tear8"></div>
+            <div class="tear tear9"></div>
+            <div class="tear tear10"></div>
+            <div class="tear tear11"></div>
+            <div class="tear tear12"></div>
+            <div class="tear tear13"></div>
+            <div class="tear tear14"></div>
+            <div class="tear tear15"></div>
+            <div class="tear tear16"></div>
+            <div class="tear tear17"></div>
+            <div class="tear tear18"></div>
+            <div class="tear tear19"></div>
+            <div class="tear tear20"></div>
+            <div class="tear tear21"></div>
+            <div class="tear tear22"></div>
+            <div class="tear tear23"></div>
+            <div class="tear tear24"></div>
+            <div class="tear tear25"></div>
+            <div class="tear tear26"></div>
+            <div class="tear tear27"></div>
+            <div class="tear tear28"></div>
+            <div class="tear tear29"></div>
+            <div class="tear tear30"></div>
+            <div class="tear tear31"></div>
+            <div class="tear tear32"></div>
+            <div class="tear tear33"></div>
+            <div class="tear tear34"></div>
+            <div class="tear tear35"></div>
+            <div class="tear tear36"></div>
+            <div class="tear tear37"></div>
+            <div class="tear tear38"></div>
+            <div class="tear tear39"></div>
+            <div class="tear tear40"></div>
+            <div class="tear tear41"></div>
+            <div class="tear tear42"></div>
+            <div class="tear tear43"></div>
+            <div class="tear tear44"></div>
+            <div class="tear tear45"></div>
+            <div class="tear tear46"></div>
+            <div class="tear tear47"></div>
+            <div class="tear tear48"></div>
+            <div class="tear tear49"></div>
+            <div class="tear tear50"></div>
+          </div>
+          <div class="smiley__mouth"></div>
+        </div>
+        <div class="smiley__speech">
+          <p id="js-speech">&nbsp;</p>
+        </div>
+      </div>
+    
+    </div>
+      
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="index.js"></script>
+<script>
+  jQuery(function($) {
+  
+  // starting dimensions
+  var $window = $(window),
+      startingSize = $window.width();
+
+  // ending dimensions
+  $window.resize(function(e) {
+     var endingSize = $window.width();
+    
+    // -------- MAKING WINDOW BIGGER -------- //
+    if ((endingSize > startingSize) & (endingSize < 980)) {
+      $("#js-speech").text("Hello!");
+    }
+    else if ((endingSize > startingSize) & (endingSize > 981) & (endingSize < 1325)) {
+      $("#js-speech").text("Um");
+    }
+    else if ((endingSize > startingSize) & (endingSize > 1326) & (endingSize < 1400)) {
+      $("#js-speech").text("Wait a minute!");
+    }
+    else if ((endingSize > startingSize) & (endingSize > 1401) & (endingSize < 1450)) {
+      $("#js-speech").text("*gasp*");
+    }
+    else if ((endingSize > startingSize) & (endingSize > 1451) & (endingSize < 1650)) {
+      $("#js-speech").text("No!");
+    }
+    else if ((endingSize > startingSize) & (endingSize > 1651) & (endingSize < 2000)) {
+      $("#js-speech").text("wwwaaahhhh");
+    }
+    else if ((endingSize > startingSize) & (endingSize > 2001)) {
+      $("#js-speech").text("WWWWWWAAAAAAHHHHHHHHH");
+    }
+    
+    
+    // -------- MAKING WINDOW SMALLER -------- //
+    else if ((endingSize < startingSize) & (endingSize < 800)) {
+      $("#js-speech").text("♥♡♥");
+    }
+    else if ((endingSize < startingSize) & (endingSize > 801) & (endingSize < 1000)) {
+      $("#js-speech").text("Hey!");
+    }
+    else if ((endingSize < startingSize) & (endingSize > 1001) & (endingSize < 1340)) {
+      $("#js-speech").text("Look");
+    }
+    else if ((endingSize < startingSize) & (endingSize > 1001) & (endingSize < 1340)) {
+      $("#js-speech").text("Look");
+    }
+    else if ((endingSize < startingSize) & (endingSize > 1341) & (endingSize < 1650)) {
+      $("#js-speech").text("*sniff sniff*");
+    }
+    else if ((endingSize < startingSize) & (endingSize > 1651) & (endingSize < 2000)) {
+      $("#js-speech").text("wwwaaahhhh");
+    }
+    else if ((endingSize < startingSize) & (endingSize > 2001)) {
+      $("#js-speech").text("WWWWWWAAAAAAHHHHHHHHH");
+    }
+    else {
+      $("#js-speech").html("&nbsp;");
+    }
+
+      // Store the new dimensions
+      startingSize = endingSize;
+  });
+});
+</script>
+</html>
