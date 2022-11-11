@@ -5,6 +5,7 @@
     left: 50px;
     z-index: 999;
     background-color: transparent;
+    transition: 0.5s all ease-in-out;
 }
 .bg{
     background-color: #ffffff50;
@@ -59,6 +60,7 @@
 }
 #collapse-menu li.active img , #collapse-menu li:hover img{
     display: block;
+    
 }
 #collapse-menu li.active a , #collapse-menu li:hover a{
     color: red;
